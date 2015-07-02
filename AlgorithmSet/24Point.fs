@@ -3,6 +3,10 @@
 type ExprTree =
     | Op of (double -> double -> double) * ExprTree * ExprTree
     | Num of double
+    override this.ToString () =
+        match this with
+        | Op (f, el, er) -> sprintf "(%A %A %A)" el f er
+        | Num n -> n.ToString()
     
 let ops =[((+),true)
           ((-),false)
