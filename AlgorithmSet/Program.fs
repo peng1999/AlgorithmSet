@@ -6,8 +6,13 @@ open _24Point
 
 [<EntryPoint>]
 let main argv = 
-    solve [ 1.; 2.; 3.; 4. ]
-    |>List.map (printfn "%O = 24")
-    |>ignore
+    printf "请输入几个数，以空格分隔："
+    (System.Console.ReadLine()).Split([| ' ' |], System.StringSplitOptions.RemoveEmptyEntries)
+    |> List.ofArray
+    |> List.map double
+    |> solve
+    |> List.map (printfn "%O = 24")
+    |> ignore
     System.Console.ReadKey true |> ignore
     0 // 返回整数退出代码
+
