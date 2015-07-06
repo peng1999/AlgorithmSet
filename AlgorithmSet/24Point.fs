@@ -29,7 +29,6 @@ let split canRev nums =
                       |> Seq.take (List.length nums / 2)
                       |> Seq.toList
     
-    //start:(double list * double list) list
     let start = [ ([], nums) ]
     List.scan step start scaner |> List.concat
 
@@ -38,21 +37,16 @@ let rec compute =
     | Num a -> a
     | Op((_, op), a, b) -> op (compute a) (compute b)
 
-//build:double list -> ExprTree list
 let rec build = 
     function 
     | [ a ] -> [ Num a ]
     | nums -> 
         [ for op, canRev  in ops do
-          let debug=split canRev nums
           for left, right in split canRev nums do
           let canYield=[ left; right ]
                        |> List.map List.length
                        |> List.forall ((<) 0)
-          if canYield then 
-              //let buildLeft  = build left
-              //let buildRight = build right
-              //for eachLeft, eachRight in (buildLeft, buildRight) ||> List.zip do
+          if canYield then
               for eachLeft in build left do
               for eachRight in build right do
               yield Op(op, eachLeft, eachRight) ]
