@@ -32,6 +32,8 @@ let split canRev nums =
     let start = [ ([], nums) ]
     List.scan step start scaner |> List.concat
 
+let canYield = List.map List.length >> List.forall ((<) 0)
+
 let rec compute = 
     function 
     | Num a -> a
@@ -43,10 +45,7 @@ let rec build =
     | nums -> 
         [ for op, canRev  in ops do
           for left, right in split canRev nums do
-          let canYield=[ left; right ]
-                       |> List.map List.length
-                       |> List.forall ((<) 0)
-          if canYield then
+          if canYield [ left; right ] then
               for eachLeft in build left do
               for eachRight in build right do
               yield Op(op, eachLeft, eachRight) ]

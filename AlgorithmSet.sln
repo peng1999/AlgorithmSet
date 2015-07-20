@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30723.0
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "AlgorithmSet", "AlgorithmSet\AlgorithmSet.fsproj", "{D643104B-9E2C-4574-8860-1250F59F1947}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Utility", "Utility\Utility.fsproj", "{815CE327-2803-4795-BA74-78A927505A7E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{D643104B-9E2C-4574-8860-1250F59F1947}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D643104B-9E2C-4574-8860-1250F59F1947}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D643104B-9E2C-4574-8860-1250F59F1947}.Release|Any CPU.Build.0 = Release|Any CPU
+		{815CE327-2803-4795-BA74-78A927505A7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{815CE327-2803-4795-BA74-78A927505A7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{815CE327-2803-4795-BA74-78A927505A7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{815CE327-2803-4795-BA74-78A927505A7E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
