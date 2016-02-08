@@ -28,8 +28,8 @@ int main()
         // smallest from left
         vector<int> smlt;
         
-        smlt.reserve(cnt);
-        int mi = p[cnt - 1];
+        smlt.resize(cnt);
+        int mi = smlt[cnt - 1] = p[cnt - 1];
         for(int i = cnt - 2; i >= 0; i--)
         {
             smlt[i] = mi = min(p[i], mi);
@@ -51,7 +51,7 @@ int main()
         	{
         		if(FRONT <= BACK)
         		{
-        			if(pbgn >= pend || FRONT < smlt[pbgn])
+        			if(pbgn >= pend || FRONT <= smlt[pbgn])
 					{
 						POP;
 						continue; 
@@ -59,7 +59,7 @@ int main()
         		}
 				else
 				{
-					if(pbgn >= pend || BACK < smlt[pbgn])
+					if(pbgn >= pend || BACK <= smlt[pbgn])
 					{
 						POP_BACK;
 						continue; 
@@ -82,3 +82,4 @@ int main()
 	}
 	
 }
+
